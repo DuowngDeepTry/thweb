@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace VuDaiDuong_8627.Controllers
         {
             _dbcontext = new ApplicationDbContext();
         }
+        [Authorize]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModels
@@ -23,6 +25,27 @@ namespace VuDaiDuong_8627.Controllers
                 Categories = _dbcontext.Categories.ToList()
             };
             return View(viewModel);
+        }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CourseViewModels viewModels)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewModels.Categories = _dbcontext.Categories.ToList();
+                return View("Create", viewModels);
+            }
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                DateTime = viewModels.GetDateTime(),
+                CategoryId = viewModels.Category,
+                Place = viewModels.Place,
+            };
+            _dbcontext.Courses.Add(course);
+            _dbcontext.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

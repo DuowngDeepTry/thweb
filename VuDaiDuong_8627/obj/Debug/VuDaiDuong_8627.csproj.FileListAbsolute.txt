@@ -110,3 +110,4 @@ C:\Users\Admin\Documents\Học tập kì 2 năm 3\web\HighScore\VuDaiDuong_8627\
 C:\Users\Admin\Documents\Học tập kì 2 năm 3\web\HighScore\VuDaiDuong_8627\VuDaiDuong_8627\obj\Debug\VuDaiDuong_8627.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\Học tập kì 2 năm 3\web\HighScore\VuDaiDuong_8627\VuDaiDuong_8627\obj\Debug\VuDaiDuong_8627.Migrations.CreateTableCourseandcategory.resources
 C:\Users\Admin\Documents\Học tập kì 2 năm 3\web\HighScore\VuDaiDuong_8627\VuDaiDuong_8627\obj\Debug\VuDaiDuong_8627.Migrations.PopulateCategoryTable.resources
+C:\Users\Admin\Documents\Học tập kì 2 năm 3\web\HighScore\VuDaiDuong_8627\VuDaiDuong_8627\obj\Debug\VuDaiDuong_8627.Migrations.AddNameColumnToApplicationUser.resources
